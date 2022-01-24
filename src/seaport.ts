@@ -3914,7 +3914,7 @@ export class OpenSeaPort {
     return { basePrice, extra, paymentToken, reservePrice };
   }
 
-  private _getMetadata(order: Order, referrerAddress?: string) {
+  public _getMetadata(order: Order, referrerAddress?: string) {
     const referrer = referrerAddress || order.metadata.referrerAddress;
     if (referrer && isValidAddress(referrer)) {
       return referrer;
@@ -3922,7 +3922,7 @@ export class OpenSeaPort {
     return undefined;
   }
 
-  private async _atomicMatch({
+  public async _atomicMatch({
     buy,
     sell,
     accountAddress,
